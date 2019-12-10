@@ -1,7 +1,7 @@
 
 version: 2
 jobs:
-  build19.04x86:
+  build:
     docker:
       - image: buildpack-deps:19.04
     steps:
