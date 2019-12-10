@@ -5,8 +5,8 @@ pushd angle
 python scripts/bootstrap.py
 gclient sync
 ./build/install-build-deps.sh
-gn gen out/Release --args='target_cpu="x86" is_debug=false'
-autoninja -C out/Release
+gn gen out/Release --args='target_cpu="x86" is_debug=false angle_enable_swiftshader=false angle_enable_vulkan=false'
+autoninja -C out/Release libEGL libGLESv2
 popd
 mkdir ./artifacts
 cp angle/out/Release/*.so ./artifacts/ > /dev/null || :
