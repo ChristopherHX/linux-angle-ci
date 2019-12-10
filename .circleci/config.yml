@@ -8,6 +8,6 @@ jobs:
       - checkout
       - run:
           name: Build
-          command: "apt update && apt install sudo && useradd -m debiand && echo 'debiand ALL=(ALL) NOPASSWD: ALL' | (EDITOR='tee -a' visudo) && cp ./build.sh /home/debiand/ && chown debiand /home/debiand/build.sh && runuser -l debiand -c ./build.sh"
+          command: "apt update && apt install sudo && useradd -m debiand && echo 'debiand ALL=(ALL) NOPASSWD: ALL' | (EDITOR='tee -a' visudo) && cp ./build.sh /home/debiand/ && chown debiand /home/debiand/build.sh && runuser -l debiand -c 'bash -c ./build.sh'"
       - store_artifacts:
           path: ./artifacts
