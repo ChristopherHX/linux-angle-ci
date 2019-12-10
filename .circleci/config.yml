@@ -1,0 +1,13 @@
+
+version: 2
+jobs:
+  build19.04x86:
+    docker:
+      - image: buildpack-deps:19.04
+    steps:
+      - checkout
+      - run:
+          name: Build
+          command: ./build.sh
+      - store_artifacts:
+          path: ./artifacts
